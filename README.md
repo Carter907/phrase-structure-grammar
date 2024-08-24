@@ -4,6 +4,7 @@
 > I'm not sure how this project will turn out, but it's worth a shot!
 
 ### Definitions
+*Vocabulary*
 > A vocabulary (or alphabet) V is a finite, nonempty set of elements called symbols. A word
 (or sentence) over V is a string of finite length of elements of V. The empty string or null
 string, denoted by 𝜆 (and sometimes by 𝜖), is the string containing no symbols. The set of all
