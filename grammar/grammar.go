@@ -1,34 +1,32 @@
 package grammar
 
 import (
-	"github.com/Carter907/phrase-structure-grammar/logic/implication"
+	"fmt"
+
 	"github.com/Carter907/phrase-structure-grammar/symbol"
 )
 
 type PSGrammar struct {
 	V Vocabulary
 	S symbol.Symbol
-	P Production
+	P Productions
 }
 
-// words that cannot be replaced
-// {a, the, rabbit, mathematician, hops, eats, quickly, wildly}
-type Terminals struct {
-	Symbols []symbol.Symbol
+func NewGrammar() PSGrammar {
+
+	return PSGrammar{
+		V: NewVocab(),
+		S: "sentence",
+		P: NewProductions(),
+	}
 }
 
-// symbols resembling labels for your syntax
-// can be replaced
-// {sentence, noun phrase, verb phrase, adjective, article, noun, verb, adverb}
-type NonTerminals struct {
-	Symbols []symbol.Symbol
-}
+func (grammar *PSGrammar) IsInLanguage(src string) bool {
 
-type Vocabulary struct {
-	Terminals
-	NonTerminals
-}
+	for _, prod := range grammar.P.implications {
 
-type Production struct {
-	implications []implication.Implication
+		fmt.Println(prod)
+	}
+
+	return false
 }
